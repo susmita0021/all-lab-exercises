@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week 12 Task 1</title>
+</head> 
+<body onload="DandT()">
+	<h2>Date and Time</h2>
+	<div id="txt"></div>
+	<script>
+		function DandT(){
+			const today = new Date();
+			let y = today.getFullYear();
+			let m = today.getMonth();
+			let d = today.getDate();
+			let hrs = today.getHours();
+			    //hrs = hrs % 12; //to display in 12 hours format
+			let min = today.getMinutes();
+			let sec = today.getSeconds();
+
+			m = checkTime(m);
+			d = checkTime(d);
+			min = checkTime(min);
+			sec  = checkTime(sec);
+
+			document.getElementById('txt').innerHTML = y+ "-" +m+ "-" +d+ "  " +hrs+ ":" +min+ ":" +sec;
+			setTimeout(DandT, 1000);
+		}
+		
+		function checkTime(i) {
+			if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+			return i;
+		}
+</script>
+</body>
+</html>

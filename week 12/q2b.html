@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Week 12 Task 2b</title>
+	</head>
+		<body>
+			<h1>Click button to show date:</h1>
+			<script type="text/javascript">
+				function currentDate()
+					{
+						var currDate = new Date();
+						var year = currDate.getFullYear();
+						var month = currDate.getMonth();
+						month++;
+						var day = currDate.getDate();
+						var hours = currDate.getHours();
+						hours=hours%12;
+						var minutes = currDate.getMinutes();
+						var seconds = currDate.getSeconds();
+						month = checkTime(month);
+			            day = checkTime(day);
+			            minutes = checkTime(minutes);
+			            seconds  = checkTime(seconds);
+
+			            document.write(year + "-" +month+ "-" +day+ "  " +hours + ":" +minutes + ":" +seconds);
+			            //setTimeout(currentDate, 1000);
+			        }
+
+			        function checkTime(i) {
+			        	if (i < 10) {i = "0" + i}; 
+			        	return i;
+			        }
+			</script>
+			<input type = "button" onclick = "currentDate()" value = "Click Me"> 
+		</body>
+</html>
